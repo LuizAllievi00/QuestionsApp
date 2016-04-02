@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/theme-classic.css" />
 	<script src="js/jquery-2.2.1.min.js"></script>
 
 
@@ -21,37 +22,53 @@
 	    });
 	</script> 
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-	
-	<script src="js/logica.js"></script>
+	<script src="js/script.js"></script>
+
 
 
 </head> 
 
 <body> 
 
-	<div data-role="page" id="pg1">
-		<div data-role="header"></div>
+	<div data-role="page" id="main_page">
+		<div data-role="header">
+            <h2>Questions App</h2>
 
-		<div data-role="main" class="ui-content">
-			<button type="button" id="processar">Clique para processar</button>
-
-
-			<div id="div-livros" livroIndex="0">
-				
-
-			</div>
-
-			<button type="button" id="proximo">Próximo</button>
-
-			<a href="#div-popup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow">Abrir JSON</a>
 		</div>
+		<div data-role="content">
+            <div style="height: 200px;"></div>
+			<a data-transition="flow" href="#themes_page" class="ui-btn ui-btn-b">Get Started!</a>
+            <div style="height: 300px;"></div>
 
-		<div data-role="popup" id="div-popup" data-transition="pop">
-			<code id="code-json"></code>
+
 		</div>
-		
-			
+		<div data-role="footer">
+            <h3>Camon Development</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="themes_page">
+        <div data-role="header">
+
+            <h2>Choose your theme</h2>
+
 		</div>
+		<div data-role="content">
+
+            <div style="height: 200px;"></div>
+            <button class="ui-input-btn ui-btn ui-btn-d">Tema 1</button>
+            <button class="ui-input-btn ui-btn ui-btn-d">Tema 2</button>
+            <button class="ui-input-btn ui-btn ui-btn-d">Tema 3</button>
+            <div style="height: 200px;"></div>
+
+
+		</div>
+		<div data-role="footer">
+            <h3>Camon Development</h3>
+        </div>
+
+    </div>
+
 
 
 
