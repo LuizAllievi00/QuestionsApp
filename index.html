@@ -32,12 +32,12 @@
     <!-- main page -->
 	<div data-role="page" id="main_page">
 		<div data-role="header">
-            <h2>Questions App</h2>
+            <h2>Nome do App</h2>
 
 		</div>
 		<div data-role="content">
             <div style="height: 200px;"></div>
-			<a data-transition="flow" href="#themes_page" class="ui-btn ui-btn-b">Get Started!</a>
+			<a data-transition="flow" href="#themes_page" class="ui-btn ui-btn-b">Começar</a>
             <div style="height: 300px;"></div>
 
 
@@ -51,16 +51,18 @@
     <div data-role="page" id="themes_page">
         <div data-role="header">
 
-            <h2>Choose your theme</h2>
+            <h2>Escolha um Tema</h2>
 
 		</div>
 		<div data-role="content">
 
             <div style="height: 200px;"></div>
-            <button class="ui-input-btn ui-btn ui-btn-d">Tema 1</button>
-            <button class="ui-input-btn ui-btn ui-btn-d">Tema 2</button>
-            <button class="ui-input-btn ui-btn ui-btn-d">Tema 3</button>
-            <a data-transition="flow" href="#main_page" class="ui-btn ui-btn-b">Go Back!</a>
+
+            <a id="theme_1" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 1</a>
+            <a id="theme_2" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 2</a>
+            <a id="theme_3" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 3</a>
+
+            <a data-transition="flow" href="#main_page" class="ui-btn ui-btn-b">Voltar</a>
 
             <div style="height: 150px;"></div>
 
@@ -73,7 +75,9 @@
     </div>
 
     <!-- questions base page -->
+	<div theme="theme" data-role="page" id="question_page">
 
+    </div>
 
 
 
