@@ -58,7 +58,8 @@
 
             <div style="height: 200px;"></div>
 
-            <a id="theme_1" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 1</a>
+
+            <a id="theme_1" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Cinema</a>
             <a id="theme_2" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 2</a>
             <a id="theme_3" data-transition="flow" href="#question_page" class="ui-input-btn ui-btn ui-btn-d">Tema 3</a>
 
@@ -76,7 +77,26 @@
 
     <!-- questions base page -->
 	<div theme="theme" data-role="page" id="question_page">
-
+		<div data-role='header'>
+            <h1>Nome do app</h1>
+		</div>
+		<div id="questions_content" data-role='content'>
+            <div style='height: 200px;'></div>
+			<button id="question_number" class="ui-btn ui-corner-all"></button>
+			<div style="height: 75px"></div>
+			<h1 id="h1_question" value=0></h1>
+            <div style='height: 50px;'></div>
+			<div id="questions_div">
+            <button id='0' class='ui-input-btn ui-btn ui-btn-d'></button>
+            <button id='1' class='ui-input-btn ui-btn ui-btn-d'></button>
+            <button id='2' class='ui-input-btn ui-btn ui-btn-d'></button>
+            <button id='3' class='ui-input-btn ui-btn ui-btn-d'></button>
+			</div>
+			<div style='height: 200px;'></div>
+		</div>
+		<div data-role='footer'>
+            <h3>Camon Development</h3>
+        </div>
     </div>
 
 
