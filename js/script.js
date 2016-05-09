@@ -130,6 +130,101 @@ var questions =
 
 
         ],
+              
+
+
+        "theme_2" : [
+            {
+                "question" : "No rugby, ou futebol americano, qual é o formato da bola usada durante o jogo?",
+                "answers" : [
+                    "Quadrada",
+                    "Redonda",
+                    "Oval",
+                    "Triangular",
+                ],
+                "correct_answer": 2
+            },
+
+
+
+	 {
+                "question" : "No vôlei, o que acontece quando a bola que um jogador tocou bate na rede?",
+                "answers" : [
+                    "É ponto para o time do jogador",
+                    "O time do jogador perde 1 ponto",
+                    "O time do jogador é eliminado e o jogo acaba",
+                    "É ponto para o time adversário",
+                ],
+                "correct_answer": 3
+            },
+
+
+
+
+	 {
+                "question" : "Qual é a cor da faixa mais alta, que pode, muito dificilmente, ser adquirida no judô?",
+                "answers" : [
+                    "preta",
+                    "azul",
+                    "amarela",
+                    "vermelha",
+                ],
+                "correct_answer": 0
+            },
+
+
+
+
+	 {
+                "question" : "Como se deve mover a bola no basquete?",
+                "answers" : [
+                    "Chutando-a",
+                    "Quicando-a no chão",
+                    "Jogando-a",
+                    "Dando tapas",
+                ],
+                "correct_answer": 1
+            },
+
+
+
+
+
+ 	{
+                "question" : "No futebol, quantos cartões, e de que cores respectivamente, é preciso que um jogador receba e seja expulso de uma partida?",
+                "answers" : [
+                    "Somente 3 amarelos",
+                    "3 amarelos e 1 vermelho",
+                    "Somente 1 vermelho",
+                    "4 amarelos e 1 vermelho",
+                ],
+                "correct_answer": 2
+            },
+
+	 {
+                "question" : "Qual seleção foi a campeã mundial de 2006?",
+                "answers" : [
+                    "Alemanha",
+                    "França",
+                    "Itália",
+                    "Brasil",
+                ],
+                "correct_answer": 2
+            },
+
+	 {
+                "question" : "Qual seleção venceu o Campeonato Mundial de Volêi Masculino de 2014?",
+                "answers" : [
+                    "Brasil",
+                    "Itália",
+                    "Alemanha",
+                    "Polônia",
+                ],
+                "correct_answer": 2
+            },
+
+        ],
+
 }
 
 function get_question(question, questions, theme) {
@@ -139,10 +234,11 @@ function get_question(question, questions, theme) {
     $("button#1").html(questions[theme][question]["answers"][1]);
     $("button#2").html(questions[theme][question]["answers"][2]);
     $("button#3").html(questions[theme][question]["answers"][3]);
+
 }
 
 function show_points(points) {
-     $("h1#h1_question").html(" ");
+    $("h1#h1_question").html(" ");
     $("button#question_number").html("Fim de Jogo");
     var template = "<h1>" + "Você fez " + points + " pontos" + "</h1>" +
         "<div style='height: 100px;'></div>"   +
@@ -152,41 +248,43 @@ function show_points(points) {
 }
 $( document ).ready(
     function () {
-
         $("a").click(
             function (event) {
                 if (event.target.id.slice(0,5) == "theme") {
+                    actual = 0;
+                    points = 0;
                     $("div#question_page").attr("theme", event.target.id);
+                    get_question(actual, questions, $("#question_page").attr("theme"))
                 }
             }
         );
         
-         $("#question_page").on("pagebeforecreate", function(){
-            $("#question_page").html(get_question(actual, questions, $("#question_page").attr("theme")));
-        });
+
 
         $("button").click(
-
-            function (){
+            function (event){
                 var theme = $("#question_page").attr("theme");
-
                 if (parseInt(event.target.id) == questions[theme][actual]["correct_answer"]){points += 1;}
-                console.log(points);
-                console.log(actual);
                 if (actual == 9){
-                    $("div#questions_div").html(show_points(points));
+                    
+                    $.mobile.pageContainer.pagecontainer('change', '#end_page', {
+                        transition: 'flow',
+                        reload    : true
+                    });
                     points = 0;
-                    actual = 0
+                    actual = 0;
                     return 0
                 }
                 else {
                     actual += 1;
-                    $("#question_page").html(get_question(actual, questions, theme));
+                    get_question(actual, questions, theme)
                     $("#questions_div").slideDown();
                     return 0
                 }
             }
         );
+
+
     })
 
 
